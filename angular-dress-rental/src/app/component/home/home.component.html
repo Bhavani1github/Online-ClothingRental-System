@@ -1,0 +1,18 @@
+
+
+<main>
+  <div class="slideshow-container">
+    <div *ngFor="let slide of slides; let i = index" class="slide" [class.active]="i === currentSlide">
+      <img [src]="slide.image" [alt]="slide.caption">
+      <div class="caption">{{ slide.caption }}</div>
+    </div>
+    <a class="prev" (click)="previousSlide()">&#10094;</a>
+    <a class="next" (click)="nextSlide()">&#10095;</a>
+  </div>
+
+  <div class="intro">
+    <marquee direction="left" behavior="alternate"><b>Welcome to Online Dress Rental</b></marquee>
+    <p>Looking for Dress??</p>
+    <a (click)="gotoLogin()"><strong>ORDER NOW</strong><i class="bi bi-arrow-right"></i></a>
+  </div>
+</main>

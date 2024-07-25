@@ -1,0 +1,86 @@
+
+
+
+<br />
+<div class="add-Product-tab">
+  <div class="centered">
+    <h1>Add Product</h1>
+  </div>
+  <br />
+  <div class="centered">
+    <table>
+      <tr>
+        <td>Product Name</td>
+        <td>
+          <input type="text" [(ngModel)]="pname" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Image</td>
+        <td>
+          <input type="text" [(ngModel)]="pImage" />
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>
+          <input type="text" [(ngModel)]="pDescription" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Mrp Price</td>
+        <td>
+          <input type="number" [(ngModel)]="mrpPrice" />
+        </td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
+        <td>
+          <input type="number" [(ngModel)]="pQuantity" />
+        </td>
+      </tr>
+      <tr>
+        <td>Category</td>
+        <td>
+          <select [(ngModel)]="categoryId" (change)="getSubList()" class="box">
+            <option
+              *ngFor="let category of catgoryList"
+              [value]="category.pc_id"
+            >
+              {{ category.categoryName }}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Sub Category</td>
+        <td>
+          <select [(ngModel)]="subCategoryId" class="box">
+            <option
+              *ngFor="let category of subCategoryList"
+              [value]="category.psc_id"
+            >
+              {{ category.subCategoryName }}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br />
+  <div class="centered">
+    <button
+      (click)="onAddProduct()"
+      mat-raised-button
+      color="primary"
+      style="background-color: rgb(16, 40, 85); color: rgb(249, 229, 254)"
+    >
+      {{ isEdit ? "Update" : "Add Product" }}
+    </button>
+  </div>
+</div>
+<br />
+<br />
+<br />

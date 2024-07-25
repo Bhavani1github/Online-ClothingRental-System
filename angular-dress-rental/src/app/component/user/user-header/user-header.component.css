@@ -1,0 +1,47 @@
+/* CSS for header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(229, 241, 254);
+  }
+  
+  header.site-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+  
+  .header .logo {
+    font-size: 25px;
+    font-family: 'Sriracha', cursive;
+    color: #000;
+    text-decoration: none;
+    margin-left: 30px;
+  }
+  
+  .nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(229, 241, 254);
+    margin-right: 20px;
+  }
+  
+  .nav-items a {
+    text-decoration: none;
+    color: #000;
+    padding: 35px 20px;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 80px; /* Adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px;
+}

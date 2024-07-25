@@ -1,0 +1,50 @@
+<br /><br />
+<div class="centered">
+    <mat-button-toggle-group [value]="searchType" (change)="getSelectedType($event)">
+        <mat-button-toggle value="bycategory">Product</mat-button-toggle>
+        <mat-button-toggle value="bysearch">Search</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+<br />
+<div *ngIf="searchType === 'bysearch'" class="centered">
+    Search:&nbsp;&nbsp; <input type="text" (keydown)="getSearchWord($event)" [(ngModel)]="searchKeyword"
+        placeholder="Search clothes name">
+</div>
+<br /><br />
+<br />
+<br />
+
+<div class="row">
+    <div class="col-lg-3 mt-3" *ngFor="let product of productList;index as i">
+        <div class="itemsbox" *ngIf="productList.length>0">
+            <p>{{product?.pid}}</p>
+            <h1>{{product?.pname}}</h1>
+            <img [src]="product?.pImage" />
+            <p><b>Description:</b>{{product?.pDescription}}</p>
+            <p><b>Quantity:</b> {{product?.pQuantity}}</p>
+            <p><b>Price:</b> {{product?.mrpPrice | currency:'INR'}}</p>
+            <p>Add-quantity</p>
+            <input type="text" [id]="product?.pid" name="addquantity" placeholder="Add-quantity" />
+            <p><b>Size:</b></p>
+            <input id="i91" type="radio" [(ngModel)]="product.size"  value="XS" name="{{i}}xs"> XS
+            <input id="i90" type="radio" [(ngModel)]="product.size"  value="X" name="{{i}}x"> X
+            <input id="i92" type="radio" [(ngModel)]="product.size"  value="M" name="{{i}}m"> M
+            <input id="i93" type="radio" [(ngModel)]="product.size"  value="L" name="{{i}}l"> L
+            <input id="i94"  type="radio" [(ngModel)]="product.size"  value="XL" name="{{i}}xl"> XL 
+
+            <p><b>Duration:</b></p>
+            <input id="i11" type="radio" [(ngModel)]="product.duration" value="1 Day" name="{{i}}1d"> 1day
+            <input id="i10" type="radio" [(ngModel)]="product.duration" value="1 Week" name="{{i}}1w">1 week
+            <br>
+
+            <button (click)="addToCart(product)">Add-to-cart</button>&nbsp;
+
+        </div>
+    </div>
+</div>
+
+<div *ngIf="productList.length === 0" class="centered">
+    No Product avaiable
+</div>
+<br />
+<br />

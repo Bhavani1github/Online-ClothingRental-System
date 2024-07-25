@@ -1,0 +1,53 @@
+/* th,tr,td {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 2px;
+  }
+
+  .button-padding {
+    margin: 0 6px 0 6px;
+}
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+table tr td img{
+  height:200px;
+  width:200px;
+
+} */
+
+
+
+/* user-cart.component.css */
+.centered {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff; /* Background color for table */
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+button.button-padding {
+  margin: 0 5px;
+}
+
+img {
+  max-width: 100px;
+  height: auto;
+}
+
+body {
+  background-image: url('/assets/images/cartbg1.jpg'); /* Adjust the path as necessary */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

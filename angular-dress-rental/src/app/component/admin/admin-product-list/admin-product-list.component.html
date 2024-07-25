@@ -1,0 +1,38 @@
+<br /><br />
+
+<br />
+<div *ngIf="productList.length===0" class="centered">
+    No product is available in list
+</div>
+
+<div class="row">
+    <div class="col-lg-3 mt-3" *ngFor="let product of productList;index as i">
+        <div class="itemsbox" *ngIf="productList.length>0">
+            <p>{{product?.pid}}</p>
+            <h1>{{product?.pname}}</h1>
+            <img [src]="product?.pImage" />
+            <p><b>Description:</b>{{product?.pDescription}}</p>
+            <p><b>Quantity:</b> {{product?.pQuantity}}</p>
+           
+            <p><b>Price:</b> {{product?.mrpPrice | currency:'INR'}}</p>
+            <button (click)="editProduct(product)">Edit</button>&nbsp;
+            <button (click)="delProduct(product)">Delete</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<div *ngIf="productList.length>0" class="centered">
+    <app-paging
+    [totalclothes]="totalclothes"
+    [pageSize]="pageSize"
+    [offset]="offset"
+    (onNextPageClick)="onNextPageClick($event)"
+    (onPreviousPageClick)="onPreviousPageClick($event)"
+    (onFirstPageClick)="onFirstPageClick($event)"
+    (onLastPageClick)="onLastPageClick($event)"
+></app-paging>
+
+
+
+
